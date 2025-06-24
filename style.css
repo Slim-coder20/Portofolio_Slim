@@ -40,6 +40,21 @@ span {
   color: var(--red);
 }
 
+.btn {
+  display: inline-block;
+  color: var(--red);
+  border: 1px solid var(--red);
+  padding: 1rem 2.8rem;
+  border-radius: 2rem;
+  transition: 0.2s ease-in-out;
+  font-size: 2rem;
+}
+.btn:hover {
+  background: var(--red);
+  color: var(--light);
+  box-shadow: 0 0 1rem var(--red);
+}
+
 /* Navigation et Header  */
 header {
   position: fixed;
@@ -59,14 +74,24 @@ header.sticky {
   border-bottom: 1rem solid rgba(0, 0, 0, 2);
 }
 .logo {
+  background-color: var(--red);
+  border: 1px solid var(--light);
+  border-radius: 20px;
+  padding: 5px 10px;
   font-size: 2.5rem;
   color: var(--light);
   font-weight: 800;
 }
 
+.logo:hover {
+  box-shadow: 0 0 1rem var(--red);
+  color: var(--light);
+}
+
 .logo span {
   font-weight: 400;
   margin-left: 5px;
+  color: var(--light);
 }
 
 .navigation a {
@@ -103,4 +128,110 @@ header.sticky {
   cursor: pointer;
   color: var(--light);
   display: none;
+}
+
+/* Section Home Page  */
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-img {
+  width: 35vw;
+  max-width: 100%;
+  animation: animImg 4s ease-in-out infinite;
+}
+.home-img img {
+  width: 70%;
+  border-radius: 50%;
+  margin-left: 50px;
+}
+
+@keyframes animImg {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-2.4rem);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.home-content h3 {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.home-content h3:nth-of-type(2) {
+  margin-bottom: 2rem;
+}
+.home-content h1 {
+  font-size: 5.6rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.home-content p {
+  font-size: 1.5rem;
+}
+
+.social-media a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.9rem;
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 50%;
+  margin: 3rem 1.5rem 3rem 0;
+  transition: background 0.2s ease-in-out;
+}
+
+.social-media a:hover {
+  background: var(--red);
+  box-shadow: 0 0 1rem var(--red);
+  color: var(--light);
+}
+
+/* Section À Propos  */
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background: var(--bg2);
+}
+
+.about-img img {
+  width: 35vw;
+  border-radius: 50%;
+  border: 0.1rem solid var(--red);
+  box-shadow: 0 0 1rem var(--red);
+  margin-right: 1rem;
+}
+
+.section-title {
+  text-align: left;
+  font-size: 4.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-title {
+  text-align: left;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.about-title h3 {
+  font-size: 2.6rem;
+}
+.about-content p {
+  font-size: 1.6rem;
+  margin: 2rem 0 3rem;
 }
