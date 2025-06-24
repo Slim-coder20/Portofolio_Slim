@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,300&display=swap");
+
+/* Reset Global CSS  */
+* {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --red: #b71540;
+  --bg: rgb(2, 2, 2);
+  --bg2: #0a0909;
+  --light: #f1f1f1;
+  --link: rgb(155, 40, 40);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+body {
+  background-color: var(--bg);
+  color: var(--light);
+  position: relative;
+}
+
+section {
+  padding: 10rem 7% 2rem;
+  min-height: 100vh;
+}
+
+span {
+  color: var(--red);
+}
+
+/* Navigation et Header  */
+header {
+  position: fixed;
+  z-index: 100;
+  background: var(--bg);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header.sticky {
+  border-bottom: 1rem solid rgba(0, 0, 0, 2);
+}
+.logo {
+  font-size: 2.5rem;
+  color: var(--light);
+  font-weight: 800;
+}
+
+.logo span {
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.navigation a {
+  font-size: 1.2rem;
+  color: var(--light);
+  margin-right: 4rem;
+  transition: 0.2s ease-in-out;
+  position: relative;
+}
+.navigation a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 0%;
+  height: 1px;
+  background: var(--red);
+  transition: width 0.2s ease-in-out;
+}
+.navigation a:hover,
+.navigation a.active {
+  color: var(--red);
+}
+
+.navigation a:hover::before,
+.navigation a.active::before {
+  width: 100%;
+}
+
+#menu-burger {
+  font-size: 3.6rem;
+  cursor: pointer;
+  color: var(--light);
+  display: none;
+}
