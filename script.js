@@ -6,7 +6,7 @@ const typed = new Typed(".multiple", {
   loop: true,
 });
 
-// traitement du menu-burger responsive max-width 768px avec un temps d'affichage via le setTimeout //
+// traitement du menu-burger responsive max-width 768px avec un temps d'affichage de 2000 via le setTimeout //
 const menuBurger = document.getElementById("menu-burger");
 const navigation = document.querySelector(".navigation");
 
@@ -24,4 +24,25 @@ menuBurger.addEventListener("click", () => {
   } else {
     clearTimeout(menuTimeout);
   }
+});
+
+// mise en place d'effet d'animation sur les menus de navigation avec le scroll //
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".navigation a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 90;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
 });
